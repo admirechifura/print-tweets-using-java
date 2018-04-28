@@ -1,0 +1,8 @@
+server:
+  port: 5656
+
+camel:
+  properties:
+    incomingFilePath: text
+    readLockMode: changed
+    readLockCheckInterval: 2000
