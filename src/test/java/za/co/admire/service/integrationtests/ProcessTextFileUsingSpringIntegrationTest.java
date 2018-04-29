@@ -27,7 +27,7 @@ import java.util.Map;
 public class ProcessTextFileUsingSpringIntegrationTest {
 
     @Autowired
-    private ProcessTextFileUsingSpring processTextFile;
+    private ProcessTextFileUsingSpring processTextFileUsingSpring;
 
     @Autowired
     private CamelProperties camelProperties;
@@ -52,7 +52,7 @@ public class ProcessTextFileUsingSpringIntegrationTest {
         org.apache.camel.Message message = defaultExchange.getIn();
         message.setHeaders(camelHeaders);
         defaultExchange.setIn(message);
-        processTextFile.process(defaultExchange);
+        processTextFileUsingSpring.process(defaultExchange);
 
     }
 

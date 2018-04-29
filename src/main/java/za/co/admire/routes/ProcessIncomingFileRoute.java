@@ -5,7 +5,7 @@ import static java.lang.String.format;
 import org.apache.camel.builder.RouteBuilder;
 import org.springframework.stereotype.Component;
 import za.co.admire.configuration.CamelProperties;
-import za.co.admire.service.ProcessTextFile;
+import za.co.admire.service.ProcessTextFileUsingSpring;
 
 /**
  * Created by admirechifura on 27/04/2018.
@@ -26,7 +26,7 @@ public class ProcessIncomingFileRoute extends RouteBuilder {
                 camelProperties.getReadLockCheckInterval()))
                 .autoStartup(Boolean.TRUE.toString())
                 .to(format("file://%s/.processed", camelProperties.getIncomingFilePath()))
-                .bean(ProcessTextFile.class)
+                .bean(ProcessTextFileUsingSpring.class)
                 .routeId("incoming-text-file-route")
                 .description(format("%s:%s", "text-file-from-folder", camelProperties.getIncomingFilePath()));
         // @formatter:on

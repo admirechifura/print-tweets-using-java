@@ -22,7 +22,7 @@ public class ProcessTextFileUsingSpring {
     private PrintAndFormatService printAndFormatService;
 
     @Autowired
-    public ProcessTextFileUsingSpring(final FileParserService fileParserService, final PrintAndFormatService printAndFormatService){
+    public ProcessTextFileUsingSpring(final FileParserService fileParserService, final PrintAndFormatService printAndFormatService) {
         this.fileParserService = fileParserService;
         this.printAndFormatService = printAndFormatService;
     }

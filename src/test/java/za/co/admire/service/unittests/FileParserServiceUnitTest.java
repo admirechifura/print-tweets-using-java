@@ -26,7 +26,7 @@ public class FileParserServiceUnitTest {
     private FileParserService fileParserService;
 
     @Test
-    public void when_parseUserFileIsCalledWithValidPathToUserFile_expect_userMapReturned(){
+    public void when_parseUserFileIsCalledWithValidPathToUserFile_expect_userMapReturned() {
         ClassLoader classLoader = getClass().getClassLoader();
         file = new File(classLoader.getResource("text/user.txt").getFile());
         Map<String, HashSet<String>> followersAndUsers = fileParserService.parseUserFile(file.getAbsolutePath());
@@ -34,14 +34,14 @@ public class FileParserServiceUnitTest {
     }
 
     @Test(expected = RuntimeException.class)
-    public void when_parseUserFileIsCalledWithInvalidPathToUserFile_expect_FileNotFoundException(){
+    public void when_parseUserFileIsCalledWithInvalidPathToUserFile_expect_FileNotFoundException() {
         ClassLoader classLoader = getClass().getClassLoader();
         file = new File(classLoader.getResource("text/user.txt").getFile());
-        fileParserService.parseUserFile(file.getAbsolutePath()+"i");
+        fileParserService.parseUserFile(file.getAbsolutePath() + "i");
     }
 
     @Test
-    public void when_parseTweetFileIsCalledWithValidPathToUserFile_expect_userMapReturned(){
+    public void when_parseTweetFileIsCalledWithValidPathToUserFile_expect_userMapReturned() {
         ClassLoader classLoader = getClass().getClassLoader();
         file = new File(classLoader.getResource("text/tweet.txt").getFile());
         Map<Double, LinkedList<String>> usersAndTweets = fileParserService.parseTweetFile(file.getAbsolutePath());
@@ -49,10 +49,10 @@ public class FileParserServiceUnitTest {
     }
 
     @Test(expected = RuntimeException.class)
-    public void when_parseTweetFileIsCalledWithInvalidPathToUserFile_expect_FileNotFoundException(){
+    public void when_parseTweetFileIsCalledWithInvalidPathToUserFile_expect_FileNotFoundException() {
         ClassLoader classLoader = getClass().getClassLoader();
         file = new File(classLoader.getResource("text/tweet.txt").getFile());
-        fileParserService.parseTweetFile(file.getAbsolutePath()+"k");
+        fileParserService.parseTweetFile(file.getAbsolutePath() + "k");
     }
 
 }

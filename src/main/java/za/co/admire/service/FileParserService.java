@@ -31,7 +31,7 @@ public class FileParserService {
     public Map<String, HashSet<String>> parseUserFile(final String fileAbsolutePath) {
         log.info("Parsing user file {}", fileAbsolutePath);
         File inputFile = new File(fileAbsolutePath);
-        Map<String,HashSet<String>> followersAndUsers = new TreeMap<>();
+        Map<String, HashSet<String>> followersAndUsers = new TreeMap<>();
 
         try (InputStream userFileInputStream = new FileInputStream(inputFile)) {
             Scanner scanner = new Scanner(userFileInputStream);
@@ -46,7 +46,7 @@ public class FileParserService {
                         HashSet<String> unionSet = new HashSet<>(followersAndUsers.get(followerKey));
                         unionSet.addAll(followerAndUsers.get(followerKey));
                         followersAndUsers.replace(followerKey, unionSet);
-                    } else{
+                    } else {
                         followersAndUsers.put(followerKey, followerAndUsers.get(followerKey));
                     }
                 }
@@ -94,7 +94,7 @@ public class FileParserService {
                     .forEach(s -> {
                         String[] followed = s.split(",");
                         String[] trimmedFollowed = new String[followed.length];
-                        for(int k =0;k<followed.length;k++){
+                        for (int k = 0; k < followed.length; k++) {
                             trimmedFollowed[k] = followed[k].trim();
                         }
                         users.addAll(Arrays.asList(trimmedFollowed));

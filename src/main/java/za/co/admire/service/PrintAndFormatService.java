@@ -19,8 +19,8 @@ public class PrintAndFormatService {
     public static final Logger log = LoggerFactory.getLogger(PrintAndFormatService.class);
 
     public void printToConsole(final Map<String, HashSet<String>> followersAndUsers, final Map<Double, LinkedList<String>> userAndTweetsDoubleLinkedListMap) {
-        log.info("Printing followersAndUsers hashSet in a map of size:{}",followersAndUsers.size());
-        log.info("Printing userAndTweetsDoubleLinkedListMap linkedList in a map of size:{}",userAndTweetsDoubleLinkedListMap.size());
+        log.info("Printing followersAndUsers hashSet in a map of size:{}", followersAndUsers.size());
+        log.info("Printing userAndTweetsDoubleLinkedListMap linkedList in a map of size:{}", userAndTweetsDoubleLinkedListMap.size());
         log.info("<<<<<<<<<<<<<<< Program Start Of Output Solution >>>>>>>>>>>>>>");
         if (!followersAndUsers.entrySet().isEmpty()) {
             Set<String> users = new TreeSet<>();  //Using Tree set which sorts according to natural ordering of its elements
