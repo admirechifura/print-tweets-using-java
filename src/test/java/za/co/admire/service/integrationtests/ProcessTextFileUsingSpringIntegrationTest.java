@@ -12,7 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 import za.co.admire.configuration.CamelProperties;
-import za.co.admire.service.ProcessTextFile;
+import za.co.admire.service.ProcessTextFileUsingSpring;
 
 import java.io.File;
 import java.util.HashMap;
@@ -24,10 +24,10 @@ import java.util.Map;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @ActiveProfiles("test")
-public class ProcessTextFileIntegrationTest {
+public class ProcessTextFileUsingSpringIntegrationTest {
 
     @Autowired
-    private ProcessTextFile processTextFile;
+    private ProcessTextFileUsingSpring processTextFile;
 
     @Autowired
     private CamelProperties camelProperties;

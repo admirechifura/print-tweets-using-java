@@ -14,15 +14,15 @@ import java.util.Map;
  * Created by admirechifura on 27/04/2018.
  */
 @Service
-public class ProcessTextFile {
+public class ProcessTextFileUsingSpring {
 
-    public static final Logger log = LoggerFactory.getLogger(ProcessTextFile.class);
+    public static final Logger log = LoggerFactory.getLogger(ProcessTextFileUsingSpring.class);
 
     private FileParserService fileParserService;
     private PrintAndFormatService printAndFormatService;
 
     @Autowired
-    public ProcessTextFile(final FileParserService fileParserService, final PrintAndFormatService printAndFormatService){
+    public ProcessTextFileUsingSpring(final FileParserService fileParserService, final PrintAndFormatService printAndFormatService){
         this.fileParserService = fileParserService;
         this.printAndFormatService = printAndFormatService;
     }
